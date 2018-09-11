@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TEST</title>
+<style type="text/css">
+#cadre{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+</style>
+</head>
+<body>
+<div id="cadre"></div>
+<script type="text/javascript">
+var cadre = document.getElementById('cadre'),
+    s = cadre.style,
+    i = cadre.offsetLeft,
+    j = cadre.offsetTop;
+document.onkeydown = function(event)
+{
+        keyCode = event.keyCode; 
+    switch(keyCode){
+    case 38:
+        j--;
+        break;
+    case 40:
+        j++;
+        break;
+    case 37:
+        i--;
+        break;
+    case 39:
+        i++;
+        break;
+    }
+
+    s.left = String(i)+'px';
+    s.top = String(j)+'px';
+}
+</script>
+</body>
+</html>
